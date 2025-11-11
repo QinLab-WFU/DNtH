@@ -1,10 +1,3 @@
-# --------------------------------------------------------
-# Swin Transformer
-# Copyright (c) 2021 Microsoft
-# Licensed under The MIT License [see LICENSE for details]
-# Written by Ze Liu
-# --------------------------------------------------------
-
 import os
 import torch
 import torch.distributed as dist
@@ -53,40 +46,6 @@ def load_pretrained(config, model, logger):
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     state_dict = checkpoint
     # 定义映射字典
-    # mapping = {
-    #     "features.0.weight": "backbone.features.0.weight",
-    #     "features.0.bias": "backbone.features.0.bias",
-    #     "features.2.weight": "backbone.features.2.weight",
-    #     "features.2.bias": "backbone.features.2.bias",
-    #     "features.5.weight": "backbone.features.5.weight",
-    #     "features.5.bias": "backbone.features.5.bias",
-    #     "features.7.weight": "backbone.features.7.weight",
-    #     "features.7.bias": "backbone.features.7.bias",
-    #     "features.10.weight": "backbone.features.10.weight",
-    #     "features.10.bias": "backbone.features.10.bias",
-    #     "features.12.weight": "backbone.features.12.weight",
-    #     "features.12.bias": "backbone.features.12.bias",
-    #     "features.14.weight": "backbone.features.14.weight",
-    #     "features.14.bias": "backbone.features.14.bias",
-    #     "features.17.weight": "backbone.features.17.weight",
-    #     "features.17.bias": "backbone.features.17.bias",
-    #     "features.19.weight": "backbone.features.19.weight",
-    #     "features.19.bias": "backbone.features.19.bias",
-    #     "features.21.weight": "backbone.features.21.weight",
-    #     "features.21.bias": "backbone.features.21.bias",
-    #     "features.24.weight": "backbone.features.24.weight",
-    #     "features.24.bias": "backbone.features.24.bias",
-    #     "features.26.weight": "backbone.features.26.weight",
-    #     "features.26.bias": "backbone.features.26.bias",
-    #     "features.28.weight": "backbone.features.28.weight",
-    #     "features.28.bias": "backbone.features.28.bias",
-    #     "classifier.0.weight": "head.weight",
-    #     "classifier.0.bias": "head.bias",
-    #     "classifier.3.weight": "hash_fc.1.weight",
-    #     "classifier.3.bias": "hash_fc.1.bias",
-    #     "classifier.6.weight": "hash_fc.2.weight",
-    #     "classifier.6.bias": "hash_fc.2.bias"
-    # }
     #
     # # 加载模型权重
     # models = RelaHash(nbit=config.MODEL.hash_length, nclass=19, hash_length=config.MODEL.hash_length, batchsize=config.DATA.BATCH_SIZE)  # 替换成你的模型类
