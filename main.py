@@ -1,9 +1,3 @@
-# --------------------------------------------------------
-# Swin Transformer
-# Copyright (c) 2021 Microsoft
-# Licensed under The MIT License [see LICENSE for details]
-# Written by Ze Liu
-# --------------------------------------------------------
 import itertools
 import os
 import time
@@ -40,8 +34,6 @@ try:
     from apex import amp
 except ImportError:
     amp = None
-
-
 
 
 def parse_option():
@@ -118,8 +110,6 @@ def sample_weight(output, target):
         weight.append(np.float64(delta))
 
     return weight
-
-
 
 
 
@@ -358,18 +348,18 @@ def main(config):
                 # print(a_tensor.shape)
                 # print(b_tensor.shape)
                 cost = NCEandMAE(a_tensor, b_tensor, num_classes=config.MODEL.NUM_CLASSES)
-#！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
             # loss = cost(output, target)
             # cost = NCEandRCE(1.0, 1.0, num_classes=config.MODEL.NUM_CLASSES)
             loss = cost(output_s, train_label) + loss0
             # loss = cost(output, train_label)
             # print("loss1:", loss)
             # accuracy = calculate_classification_accuracy(output, target)
-#添
+
             loss.backward()
             optimizer.step()
 
-            # AWNet参数更新
+            # DWNet参数更新
             output_2, output_2_s, output_2_t = model(train_input)
             # output_2 = models(train_input)
             # loss2 = cost(output_2, target)
