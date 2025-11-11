@@ -1,10 +1,3 @@
-# --------------------------------------------------------
-# Swin Transformer
-# Copyright (c) 2021 Microsoft
-# Licensed under The MIT License [see LICENSE for details]
-# Written by Ze Liu
-# --------------------------------------------------------'
-
 import os
 import yaml
 from yacs.config import CfgNode as CN
@@ -22,8 +15,7 @@ _C.DATA = CN()
 _C.DATA.BATCH_SIZE = 32
 # Path to dataset, could be overwritten by command line argument
 
-# _C.DATA.DATA_PATH = '/home/admin01/桌面/DSSGH/dataset/AID'
-# 修改后的
+
 _C.DATA.DATA_PATH ='./DNTH/dataset/UCMD'
 
 # Dataset name
@@ -51,29 +43,21 @@ _C.DATA.TOP_K = -1
 # -----------------------------------------------------------------------------
 _C.MODEL = CN()
 # Model type
-# _C.MODEL.TYPE = 'swin'
-# _C.MODEL.TYPE = 'RelaHash'
-# _C.MODEL.TYPE = 'FAH'
+
 _C.MODEL.TYPE = 'Network'
-# _C.MODEL.TYPE = 'navigateNet'
+
 # Model name
-# _C.MODEL.NAME = 'swin_tiny_patch4_window7_224_22k'
+
 _C.MODEL.NAME = ''
 # Pretrained weight from checkpoint, could be imagenet22k pretrained weight
 # could be overwritten by command line argument
-# _C.MODEL.PRETRAINED = 'vgg16.pth'
-# _C.MODEL.PRETRAINED = 'resnet18.pth'
 
-# _C.MODEL.PRETRAINED ='alexnet-owt-4df8aa71.pth'
-# _C.MODEL.PRETRAINED =''
-# _C.MODEL.PRETRAINED ='swin_pre.pth'
 _C.MODEL.PRETRAINED ='vit_small_patch16_224.pth'
 # Checkpoint to resume, could be overwritten by command line argument
-#~~~~~~~~~~~~~~~~~~
-# _C.MODEL.RESUME = 'E:/Users/cache/torch/hub/checkpoints/vgg16-397923af.pth'
+
 _C.MODEL.RESUME = ''
 # Number of classes, overwritten in data preparation
-# _C.MODEL.n_class=19
+
 _C.MODEL.NUM_CLASSES = 21
 # Dropout rate
 _C.MODEL.DROP_RATE = 0.0
@@ -119,26 +103,7 @@ _C.MODEL.SWIN_MLP.PATCH_NORM = True
 # -----------------------------------------------------------------------------
 # Training settings
 # # -----------------------------------------------------------------------------
-# _C.TRAIN = CN()
-# _C.TRAIN.START_EPOCH = 0
-# _C.TRAIN.EPOCHS = 50
-# _C.TRAIN.WARMUP_EPOCHS = 20
-# _C.TRAIN.WEIGHT_DECAY = 0.0005
-# _C.TRAIN.BASE_LR = 0.0001
-# _C.TRAIN.WARMUP_LR = 5e-7
-# _C.TRAIN.MIN_LR = 5e-6
 
-# #
-# _C.TRAIN = CN()
-# _C.TRAIN.START_EPOCH = 0
-# _C.TRAIN.EPOCHS = 50
-# _C.TRAIN.WARMUP_EPOCHS = 20
-# _C.TRAIN.WEIGHT_DECAY = 0.0004
-# _C.TRAIN.BASE_LR = 6.25e-07
-# _C.TRAIN.WARMUP_LR = 0.00001
-# _C.TRAIN.MIN_LR = 6.25e-08
-
-# dg
 _C.TRAIN = CN()
 _C.TRAIN.START_EPOCH = 0
 _C.TRAIN.EPOCHS = 50
@@ -148,25 +113,6 @@ _C.TRAIN.BASE_LR = 0.0001
 _C.TRAIN.WARMUP_LR = 0.00001
 _C.TRAIN.MIN_LR = 0.000001
 
-
-# _C.TRAIN = CN()
-# _C.TRAIN.START_EPOCH = 0
-# _C.TRAIN.EPOCHS = 50
-# _C.TRAIN.WARMUP_EPOCHS = 20
-# _C.TRAIN.WEIGHT_DECAY = 0.0001
-# _C.TRAIN.BASE_LR = 0.001
-# _C.TRAIN.WARMUP_LR = 0.00001
-# _C.TRAIN.MIN_LR = 0.000001
-
-# # # FAH
-# _C.TRAIN = CN()
-# _C.TRAIN.START_EPOCH = 0
-# _C.TRAIN.EPOCHS = 80
-# _C.TRAIN.WARMUP_EPOCHS = 20
-# _C.TRAIN.WEIGHT_DECAY = 0.0005
-# _C.TRAIN.BASE_LR = 1e-4
-# _C.TRAIN.WARMUP_LR = 0.00001
-# _C.TRAIN.MIN_LR = 0.000001
 
 # Clip gradient norm
 _C.TRAIN.CLIP_GRAD = 5.0
