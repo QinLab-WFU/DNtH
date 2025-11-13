@@ -17,10 +17,16 @@ After the dataset has been prepared, we could run the follow command to train.
 > 
 ### Citation
 @article{yan2025deep,
+
   title={Deep noise-tolerant hashing for remote sensing image retrieval},
+  
   author={Yan, Chunyu and Wang, Lei and Qin, Qibing and Dai, Jiangyan and Zhang, Wenfeng},
+  
   journal={Signal Processing: Image Communication},
+  
   pages={117431},
+  
   year={2025},
+  
   publisher={Elsevier}
 }
