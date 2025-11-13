@@ -16,10 +16,11 @@ After the dataset has been prepared, we could run the follow command to train.
 > python main.py --is-train --dataset UCMerced --lr 0.0001 --wd 0.0004 --save-dir ./result/ucmd/16 --vit-path ./pretrained/vit_small_patch16_224.pth
 > 
 ### Citation
-@article{YAN2026117431,  
-  author = {Chunyu Yan and Lei Wang and Qibing Qin and Jiangyan Dai and Wenfeng Zhang},  
-  title = {Deep noise-tolerant hashing for remote sensing image retrieval},  
-  journal = {Signal Processing: Image Communication},  
-  year = {2026},  
-  issn = {0923-5965},  
-  doi = {https://doi.org/10.1016/j.image.2025.117431}}  
+@article{yan2025deep,
+  title={Deep noise-tolerant hashing for remote sensing image retrieval},
+  author={Yan, Chunyu and Wang, Lei and Qin, Qibing and Dai, Jiangyan and Zhang, Wenfeng},
+  journal={Signal Processing: Image Communication},
+  pages={117431},
+  year={2025},
+  publisher={Elsevier}
+}
